@@ -42,9 +42,15 @@ Example Playbook
         - "/home/apatt/github/demopod-ansible/credentials.yml"
 
       roles:
-        - ansible-role-kubernetes-network-plugin
+        - { role: ansible-role-kubernetes-network-plugin, calico_version: "v3.25.0" }
 
 License
 -------
 
 MIT
+
+Author Information
+------------------
+
+Aaron Patten
+aaronpatten@gmail.com
