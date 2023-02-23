@@ -1,4 +1,4 @@
-Role Name
+Ansible Role: Kubernetes network plugin
 =========
 
 Install either the Calico or Weave CNI plugin for Kubernetes.
