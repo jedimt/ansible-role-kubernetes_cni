@@ -1,0 +1,36 @@
+---
+# tasks file for ansible-role-kubernetes-network-plugin
+
+# Calico Installation
+- name: Test for existing Calico install
+  ansible.builtin.shell:
+    cmd: kubectl get crd | grep -o calico -m 1
+  register: calico_crd
+  failed_when: calico_crd.rc > 1
+  changed_when: false
+  tags: calico
+
+- name: Download and apply the Calico CNI manifest
+  ansible.builtin.command:
+    "kubectl apply -f {{ calico_manifest_url }}"
+  when:
+    - "'calico' not in calico_crd.stdout"
+    - cni_plugin == "calico"
+  tags: calico
+
+# Weave Installation
+
+- name: Test for existing Weave install
+  ansible.builtin.shell:
+    cmd: kubectl get pods -n kube-system | grep weave
+  register: weave_present
+  changed_when: false
+  failed_when: weave_present.rc > 1
+  tags: weave
+
+- name: Install Weave CNI
+  ansible.builtin.command:
+    "kubectl apply -f {{ weave_manifest_url }}"
+  when:
+    - cni_plugin == "weave"
+    - "'weave' not in weave_present.stdout"

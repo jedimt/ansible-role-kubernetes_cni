@@ -1,0 +1,20 @@
+galaxy_info:
+  author: jedimt
+  role_name: kubernetes_network_plugin
+  description: Install a K8s CNI plugin
+
+  license: MIT
+
+  min_ansible_version: "5"
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - focal
+        - xenial
+        - jammy
+
+  galaxy_tags:
+    - kubernetes
+
+dependencies: []
