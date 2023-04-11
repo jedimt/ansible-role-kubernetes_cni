@@ -1,5 +1,5 @@
 ---
-# vars file for ansible-role-kubernetes-network-plugin
+# vars file for jedimt.kubernetes_cni
 
 # CNI plugin to install (callico|weave)
 cni_plugin: "calico"

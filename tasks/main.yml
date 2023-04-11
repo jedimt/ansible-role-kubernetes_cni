@@ -1,5 +1,5 @@
 ---
-# tasks file for ansible-role-kubernetes-network-plugin
+# tasks file for jedimt.kubernetes_cni
 
 # Calico Installation
 - name: Test for existing Calico install

@@ -1,6 +1,6 @@
 galaxy_info:
   author: jedimt
-  role_name: kubernetes_network_plugin
+  role_name: kubernetes_cni
   description: Install a K8s CNI plugin
 
   license: MIT

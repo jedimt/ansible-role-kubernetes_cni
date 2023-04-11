@@ -1,4 +1,4 @@
-Ansible Role: Kubernetes network plugin
+Ansible Role: Kubernetes CNI
 =========
 
 Install either the Calico or Weave CNI plugin for Kubernetes.
@@ -42,7 +42,7 @@ Example Playbook
         - "../../credentials.yml"
 
       roles:
-        - { role: ansible-role-kubernetes-network-plugin, calico_version: "v3.25.0" }
+        - { role: jedimt.kubernetes_cni, calico_version: "v3.25.0" }
 
 License
 -------
